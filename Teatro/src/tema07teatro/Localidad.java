@@ -16,10 +16,6 @@ public class Localidad {
     private int nTeatro;
     private ArrayList<Teatro> teatros = new ArrayList<Teatro>();
 
-    Localidad() {
-        
-    }
-
     public ArrayList<Teatro> getTeatros() {
         return teatros;
     }
@@ -30,9 +26,6 @@ public class Localidad {
 
     public String getNombre() {
         return nombre;
-    }
-    public void añadirTeatroList(Teatro e){
-        this.teatros.add(e);
     }
 
     public void setNombre(String nombre) {
@@ -51,12 +44,8 @@ public class Localidad {
         this.nombre = nombre;
         this.nTeatro = nTeatro;
     }
-    public boolean añadirTeatro(){
-        if(this.nTeatro>0){
-            return true;
-        }else{
-            return false;
-        }
+    public void añadirTeatro(){
+        
     }
     public int buscarTeatro(String nombre){
         for(int i=0;i<this.teatros.size();i++){

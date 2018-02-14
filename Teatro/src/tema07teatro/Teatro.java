@@ -18,10 +18,6 @@ public class Teatro {
     private ArrayList<Funcion> funciones = new ArrayList<Funcion>();
     private Funcion activa;
 
-    Teatro() {
-        
-    }
-
     public Funcion getActiva() {
         return activa;
     }

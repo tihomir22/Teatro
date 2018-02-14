@@ -11,14 +11,14 @@ package tema07teatro;
  */
 public class Funcion {
 
-    private int id;
+    private String id;
     private String nombre;
     private double precio;
     private int nAsientosLibres;
     private String fecha;
     private String hrepre;
 
-    public Funcion(int id, String nombre, double precio, int nAsientosLibres, String fecha, String hrepre) {
+    public Funcion(String id, String nombre, double precio, int nAsientosLibres, String fecha, String hrepre) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -27,15 +27,11 @@ public class Funcion {
         this.hrepre = hrepre;
     }
 
-    Funcion() {
-        
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -89,6 +85,5 @@ public class Funcion {
         System.out.println("La hora de representacion es " + this.hrepre);
         System.out.println("*************************************************");
     }
-    public double 
 
 }
