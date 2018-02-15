@@ -19,15 +19,14 @@ public class Tema07Teatro {
     public static void main(String[] args) {
         Localidad local1 = null;
         Teatro teatro = null;
-        Funcion funcion1=null;
-        int numCorre=1,opcion, numT, numA;
-        
-        String nombre, nomTe;
+        Funcion funcion1 = null;
+        int numCorre = 1, opcion, numT, numA;
+        double precio;
+        String nombre, nomTe, fecha, hora;
         Scanner teclado = new Scanner(System.in);
 
         local1 = new Localidad();
         System.out.println("Introduce nombre de localidad");
-        teclado.nextLine();
         nombre = teclado.nextLine();
         local1.setNombre(nombre);
         System.out.println("Introduce numero de teatros");
@@ -55,12 +54,28 @@ public class Tema07Teatro {
                     teclado.nextLine();
                     nomTe = teclado.nextLine();
                     if (local1.buscarTeatro(nomTe) != -1) {
-                        funcion1=new Funcion();
+                        funcion1 = new Funcion();
                         funcion1.setId(numCorre);
                         System.out.println("Introduzca nombre de la funcion");
-                        nombre=teclado.nextLine();
-                        if(funcion1.)
-                    }else{
+                        nombre = teclado.nextLine();
+                        int pos = teatro.buscarFuncion(nombre);
+                        if (pos != -1) { // si existe... le cambiamos por el precio que tenia
+                            funcion1.setPrecio(teatro.getFunciones().get(pos).getPrecio());
+                        } else {
+                            System.out.println("Introduzca precio de la funcion nueva");
+                            precio = teclado.nextDouble();
+                        }
+                        funcion1.setnAsientosLibres(teatro.getnAsiento());
+                        System.out.println("Introduce fecha AA/MM/DD y hora de presentacion 00:00 ");
+                        fecha = teclado.nextLine();
+                        hora = teclado.nextLine();
+                        if (teatro.comprobarFechaExiste(fecha, hora) == true) {
+                            System.out.println("No puede haber una funcion a la misma hora y fecha");
+                        } else {
+                            teatro.añadirFuncion(funcion1);
+                        }
+                        numCorre++;
+                    } else {
                         System.out.println("No puedes gestionar un teatro que no existe");
                     }
                     break;

@@ -19,7 +19,7 @@ public class Teatro {
     private Funcion activa;
 
     Teatro() {
-        
+
     }
 
     public Funcion getActiva() {
@@ -67,13 +67,25 @@ public class Teatro {
     public void modificarFuncion(double precio, Funcion f) {
         f.setPrecio(precio);
     }
-    public int buscarFuncion(String nombre){
-        for(int i=0;i<this.funciones.size();i++){
-            if(this.funciones.get(i).getNombre().equalsIgnoreCase(nombre)){
+
+    public int buscarFuncion(String nombre) {
+        for (int i = 0; i < this.funciones.size(); i++) {
+            if (this.funciones.get(i).getNombre().equalsIgnoreCase(nombre)) {
                 return i;
             }
         }
         return -1;
+    }
+
+    public boolean comprobarFechaExiste(String fecha, String hora) {
+        for (int i = 0; i < funciones.size(); i++) {
+            if (this.funciones.get(i).getHrepre().equalsIgnoreCase(fecha) && this.funciones.get(i).getFecha().equalsIgnoreCase(hora)) {
+                return true;  
+            }
+            
+        }
+        
+        return false;
     }
 
 }

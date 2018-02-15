@@ -89,6 +89,6 @@ public class Funcion {
         System.out.println("La hora de representacion es " + this.hrepre);
         System.out.println("*************************************************");
     }
-    public double 
+    
 
 }
